@@ -1,0 +1,7 @@
+on: push
+jobs:
+  j:
+    runs-on: macos-latest
+    steps:
+      - run: gem install nokogiri
+      - run: ruby --version
