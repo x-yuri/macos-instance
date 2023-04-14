@@ -5,9 +5,12 @@ jobs:
     steps:
       - run: gem install nokogiri
       - run: ruby --version
-      - run: brew install homebrew/cask/docker
+      - run: brew install docker
+      - run: brew install docker-machine
       - run: brew list docker
       - run: brew info docker
       - run: whoami
-      - run: sudo dockerd
-      - run: sudo docker run hello-world
+      - run: docker-machine create --driver virtualbox default
+      - run: docker-machine start default
+      - run: eval "$(docker-machine env default)"
+      - run: docker run hello-world
