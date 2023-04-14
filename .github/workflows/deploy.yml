@@ -3,6 +3,7 @@ jobs:
   j:
     runs-on: macos-latest
     steps:
+      - run: docker run hello-world
       - run: gem install nokogiri
       - run: ruby --version
       - run: brew install docker
