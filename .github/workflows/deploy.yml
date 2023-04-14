@@ -3,8 +3,11 @@ jobs:
   j:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: docker run hello-world
+      - run: brew install docker-machine
+      - run: docker-machine create --driver virtualbox default
+
+      # - uses: actions/checkout@v2
+      # - run: docker run hello-world
       # - run: gem install nokogiri
       # - run: ruby --version
       # - run: brew install docker
