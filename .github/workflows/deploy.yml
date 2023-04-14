@@ -6,6 +6,8 @@ jobs:
       - run: gem install nokogiri
       - run: ruby --version
       - run: brew install docker
+      - run: brew list docker
+      - run: brew info docker
       - run: whoami
       - run: sudo dockerd
       - run: sudo docker run hello-world
