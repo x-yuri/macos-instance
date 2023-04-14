@@ -5,3 +5,7 @@ jobs:
     steps:
       - run: gem install nokogiri
       - run: ruby --version
+      - run: brew install docker
+      - run: whoami
+      - run: dockerd
+      - run: docker run hello-world
