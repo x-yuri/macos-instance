@@ -1,18 +1,11 @@
 on: push
 jobs:
-  j:
-    runs-on: macos-latest
+  build:
+    runs-on: macOS-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: docker run hello-world
-      # - run: gem install nokogiri
-      # - run: ruby --version
-      # - run: brew install docker
-      # - run: brew install docker-machine
-      # - run: brew list docker
-      # - run: brew info docker
-      # - run: whoami
-      # - run: docker-machine create --driver virtualbox default
-      # - run: docker-machine start default
-      # - run: eval "$(docker-machine env default)"
-      # - run: docker run hello-world
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build and test
+        run: |
+          docker build -t my-image .
+          docker run my-image npm test
