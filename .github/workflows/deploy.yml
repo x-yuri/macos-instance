@@ -5,7 +5,7 @@ jobs:
     steps:
       - run: gem install nokogiri
       - run: ruby --version
-      - run: brew install docker
+      - run: brew install homebrew/cask/docker
       - run: brew list docker
       - run: brew info docker
       - run: whoami
