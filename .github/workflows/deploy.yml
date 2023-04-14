@@ -7,5 +7,5 @@ jobs:
       - run: ruby --version
       - run: brew install docker
       - run: whoami
-      - run: dockerd
-      - run: docker run hello-world
+      - run: sudo dockerd
+      - run: sudo docker run hello-world
